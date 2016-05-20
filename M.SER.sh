@@ -49,7 +49,7 @@ for (( ;; )) ; do
 	# Bandwidth Usage
 	download=`ifconfig $interface | tail -n 2 | head -n 1 | cut -d '(' -f 2 | cut -d ')' -f 1`
 	upload=`ifconfig $interface | tail -n 2 | head -n 1 | cut -d '(' -f 3 | tr -d ')'`
-	up 83 "<p>$download DL & $upload UP</p>" /tmp/M.SER/index3.html > /tmp/M.SER/index4.html
+	up 83 "<p>$download receive / $upload send</p>" /tmp/M.SER/index3.html > /tmp/M.SER/index4.html
 	rm -f /tmp/M.SER/index3.html
 
 	# Active users

@@ -1,0 +1,70 @@
+Programming and idea by : E2MA3N [Iman Homayouni]
+Gitbub : https://github.com/e2ma3n
+Email : e2ma3n@Gmail.com
+Website : http://OSLearn.ir
+License : GPL v3.0
+CSS and html templates by http://startbootstrap.com/
+M.SER v1.0 - README [Monitor. system events and resources]
+
+
+Description :
+This is a simple program for monitoring system events and resources. This program create dynamic html page for show system resources in web server. That's mean, you can open your web server ( such as http://example.com/ ) and see important information such as cpu usage, ram usage, active users, ssh attacks and other informations like this.
+
+
+Dependencies :
+whoami
+sleep
+cat
+head
+tail
+cut
+awk
+date
+grep
+mv
+cp
+rm
+iostat
+
+
+Check dependencies :
+sudo chmod +x install.sh
+sudo ./install.sh -c
+
+
+Install iostat on debian systems :
+sudo apt-get install sysstat
+
+
+Install :
+sudo chmod +x install.sh
+sudo ./install.sh -i
+
+
+Usage :
+sudo /opt/M.SER_v1.0/M.SER.sh
+open http://example.com/
+
+
+Uninstall :
+sudo rm -r /opt/M.SER_v1.0/
+sudo rm -f /YOUR-WEB-SERVER-ADDRESS/css/bootstrap.min.css
+sudo rm -f /YOUR-WEB-SERVER-ADDRESS/css/heroic-features.css
+sudo rm -f /YOUR-WEB-SERVER-ADDRESS/index.html
+
+
+Tested on :
+Debian 8.1.0 netinstall - 64 Bit
+Debian 8.4.0 netinstall - 64 Bit
+Debian 6.0.6 netinstall - 32 Bit
+Debian 7.8.0 netinstall - 64 Bit
+
+
+Startup in system :
+nano /etc/crontab	# Open crontab and add the following line to crontab file.
+@reboot root /opt/M.SER_v1.0/M.SER.sh
+
+
+Notes :
+You have two choises, start manually or starting up script as a daemon.
+You should run program as root.

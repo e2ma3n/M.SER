@@ -33,7 +33,8 @@ function up {
 for (( ;; )) ; do
 
 	# Uptime
-	up 56 "<p>`uptime -p | cut -d ',' -f 1,2,3`</p>" $www > /tmp/M.SER/index1.html
+	time=`uptime -p |  sed 's/^up//' | cut -d ',' -f 1,2,3`
+	up 56 "<p>$time</p>" $www > /tmp/M.SER/index1.html
 
 	# CPU Usage
 	cpu=`iostat | grep -A1 '%idle' | tr " " : | tr -s : | cut -d : -f 7 | tail -n1 | cut -d . -f 1`

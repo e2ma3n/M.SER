@@ -210,8 +210,6 @@ function install_f {
 				echo '[+]'
 			fi
 		done
-	else
-		echo '[+]'
 	fi
 	
 	# M.CSS Program

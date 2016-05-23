@@ -59,7 +59,11 @@ up 93 "<p>$n Person</p>" /tmp/M.SER/index4.html > /tmp/M.SER/index5.html
 rm -f /tmp/M.SER/index4.html
 
 # SSH Attacks
-n=`grep 'Failed password' /var/log/auth.log | wc -l`
+if [ -f /var/log/auth.log ] ; then
+	n=`grep 'Failed password' /var/log/auth.log | wc -l`
+elif [ -f /var/log/secure ] ; then
+	n=`grep 'Failed password' /var/log/secure | wc -l`
+fi
 up 102 "<p>$n SSH Attack on server</p>" /tmp/M.SER/index5.html > /tmp/M.SER/index6.html
 rm -f /tmp/M.SER/index5.html
 

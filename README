@@ -8,10 +8,10 @@ M.SER v1.0 - README [Monitor. system events and resources]
 
 
 Description :
-This is a simple program for monitoring system events and resources. This program create dynamic html page for show system resources in web server. That's mean, you can open your web server ( such as http://example.com/ ) and see important information such as cpu usage, ram usage, active users, ssh attacks and other informations like this.
-
+M.SER is an linux application that can combine logs to a human readable mode and stores that in a dynamic html page. The name of this application stands for monitor system events and resources, it can collect authentication logs, online users, ram and cpu usages and bw usages.
 
 Dependencies :
+uptime
 whoami
 sleep
 cat

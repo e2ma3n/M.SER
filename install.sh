@@ -130,6 +130,7 @@ function install_f {
 	# / partition
 	for (( ;; )) ; do
 		echo '[+] Enter / partition. for example, /dev/sda1'
+		echo "[+] run 'df' command in system to see main partition."
 		echo -en "[+] Enter address: " ; read root
 		echo -en "[+] / partition is $root. Are you sure ? [y/n]: " ; read question
 		if [ "$question" = "y" ] ; then

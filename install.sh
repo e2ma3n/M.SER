@@ -127,23 +127,6 @@ function install_f {
 		fi
 	done
 
-	# / partition
-	for (( ;; )) ; do
-		echo '[+] Enter / partition. for example, /dev/sda1'
-		echo "[+] run 'df' command in system to see main partition."
-		echo -en "[+] Enter address: " ; read root
-		echo -en "[+] / partition is $root. Are you sure ? [y/n]: " ; read question
-		if [ "$question" = "y" ] ; then
-			up 14 "root="$root"" M.SER.sh > M.SAL_new.sh
-			mv M.SAL_new.sh M.SER.sh
-			echo '[+] M.SER.sh Updated'
-			echo '[+]'
-			break
-		else
-			echo '[+]'
-		fi
-	done
-
 	# Create css directory in web server
 	[ ! -d $www/css ] && mkdir -p $www/css && echo "[+] css Directory created in $www" || echo "[-] Error: $www/css exist"
 	sleep 1

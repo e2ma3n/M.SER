@@ -9,7 +9,6 @@
 # --------------------------------------------------------------- #
 
 www="/var/www/html/index.html"
-delay="60"
 interface="eth0"
 listen="22"
 root="/dev/sda1"

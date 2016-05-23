@@ -59,6 +59,9 @@ sudo rm -f /YOUR-WEB-SERVER-ADDRESS/index.html
 
 
 Tested on :
+CentOS 7 minimal - 64 Bit
+CentOS 6.6 minimal - 64 Bit
+CentOS 6.3 minimal - 32 Bit
 Debian 8.1.0 netinstall - 64 Bit
 Debian 8.4.0 netinstall - 64 Bit
 Debian 6.0.6 netinstall - 32 Bit

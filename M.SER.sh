@@ -29,7 +29,12 @@ function up {
 [ ! -d /tmp/M.SER/ ] && mkdir -p /tmp/M.SER/
 
 # Uptime
-time=`uptime -p |  sed 's/^up//' | cut -d ',' -f 1,2,3`
+time1=`uptime -p 2> /dev/null`
+if [ "$?" = "0" ] ; then
+	time1=`echo "$time1" | sed 's/^up//' | cut -d ',' -f 1,2,3`
+else
+	time1=`uptime | rev | cut -d ',' -f 1,2,3,4 --complement | rev | grep -o -P '.{0,0}up.{0,}'`	
+fi
 up 57 "<p>$time</p>" $www > /tmp/M.SER/index1.html
 
 # CPU Usage

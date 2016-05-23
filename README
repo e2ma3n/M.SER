@@ -37,6 +37,10 @@ Install iostat on debian systems :
 sudo apt-get install sysstat
 
 
+Install iostat on redhat systems :
+sudo yum install sysstat
+
+
 Install :
 sudo chmod +x install.sh
 sudo ./install.sh -i
@@ -61,11 +65,5 @@ Debian 6.0.6 netinstall - 32 Bit
 Debian 7.8.0 netinstall - 64 Bit
 
 
-Startup in system :
-nano /etc/crontab	# Open crontab and add the following line to crontab file.
-@reboot root /opt/M.SER_v1.0/M.SER.sh
-
-
 Notes :
-You have two choises, start manually or starting up script as a daemon.
 You should run program as root.

@@ -11,7 +11,6 @@
 www="/var/www/html/index.html"
 interface="eth0"
 listen="22"
-root="/dev/sda1"
 
 
 function up {
@@ -65,7 +64,7 @@ up 102 "<p>$n SSH Attack on server</p>" /tmp/M.SER/index5.html > /tmp/M.SER/inde
 rm -f /tmp/M.SER/index5.html
 
 # Disk Usage
-n=`df -T | grep "$root" | tr -s " " | rev | cut -d ' ' -f 2 | rev | tr -d '%'`
+n=`df | rev | grep "^/" | tr -s ' ' | cut -d ' ' -f 2 | rev | tr -d '%'`
 up 111 "<p>$n Percent</p>" /tmp/M.SER/index6.html > /tmp/M.SER/index7.html
 rm -f /tmp/M.SER/index6.html
 

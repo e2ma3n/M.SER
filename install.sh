@@ -61,8 +61,14 @@ function install_f {
 	sleep 1.5
 	echo '[+] Tested on all popular linux distributions such as debian 7, debian 8, ubuntu server, CentOS 6 and CentOS 7'
 	sleep 1.5
+	echo '[+] Suggestions: Install M.CSS for monitoring and control system services (restart and stop 12 popular services such as apache and ...)'
+	sleep 2.5
+	echo '[+] Suggestions: Install M.SAL for monitoring system authentication logs (such as ssh attack, ssh login and ...)'
+	sleep 2.5
+	echo '[+] Suggestions: Install M.SQL for monitoring squid logs (all logs)'
+	sleep 2.5
 	echo -en '[+] Press enter for continue or press ctrl+c for exit' ; read
-	sleep 2
+	sleep 4
 
 	# Create main directory
 	echo '[+]'
@@ -239,7 +245,15 @@ function install_f {
 	# Copy M.SER.sh
 	[ ! -f /opt/M.SER_v1.0/M.SER.sh ] && cp M.SER.sh /opt/M.SER_v1.0/ && chmod 755 /opt/M.SER_v1.0/M.SER.sh && echo '[+] M.SER.sh copied' || echo '[-] Error: /opt/M.SER_v1.0/M.SER.sh exist'
 	sleep 1
-
+	
+	# Create startup.sh
+	[ ! -f /opt/M.SER_v1.0/startup.sh ] && echo '#! /bin/bash' > /opt/M.SER_v1.0/startup.sh && echo '/opt/M.SER_v1.0/M.SER.sh' >> /opt/M.SER_v1.0/startup.sh && chmod +x /opt/M.SER_v1.0/startup.sh && echo '[+] startup.sh created' || echo '[-] Error: /opt/M.SER_v1.0/startup.sh exist'
+	sleep 1
+	
+	# Add startup.sh to crontab file
+	[ -f /etc/crontab ] && echo '@reboot root /opt/M.SER_v1.0/startup.sh' >> /etc/crontab && echo '[+] startup.sh added to crontab file' || echo -e "[-] Error: /etc/crontab not found\n[-] You can start program manually or starting up script as a daemon using another way."
+	sleep 1
+	
 	# Copy README
 	[ ! -f /opt/M.SER_v1.0/README ] && cp README /opt/M.SER_v1.0/README && chmod 644 /opt/M.SER_v1.0/README && echo '[+] README copied' || echo '[-] Error: /opt/M.SER_v1.0/README exist'
 	echo "[+]"
@@ -248,7 +262,7 @@ function install_f {
 	# echo footer
 	echo '[+] Please see README'
 	sleep 0.5
-	echo '[!] Warning: You have two choises, start manually or starting up script as a daemon.'
+	echo '[!] Warning: You have two choises, start manually or another way.'
 	sleep 0.5
 	echo '[!] Warning: You should run program as root.'
 	sleep 0.5

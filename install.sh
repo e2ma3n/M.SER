@@ -222,7 +222,7 @@ function install_f {
 	sleep 1
 	
 	# Add M.SER.sh to crontab file
-	[ -f /etc/crontab ] && echo '*/1 *   * * *   root    /opt/M.SER_v1.0/M.SER.sh' >> /etc/crontab && echo '[+] M.SER.sh added to crontab file' || echo -e "[-] Error: /etc/crontab not found\n[-] You can start program manually or starting up script as a daemon using another way."
+	[ -f /etc/crontab ] && echo '*/1 *   * * *   root    /opt/M.SER_v1.0/M.SER.sh' >> /etc/crontab && echo -e "[+] M.SER.sh added to crontab file\n[+] M.SER automatically running every 1 minute" || echo -e "[-] Error: /etc/crontab not found\n[-] You can start program manually or starting up script as a daemon using another way."
 	sleep 1
 	
 	# Copy README
@@ -233,11 +233,9 @@ function install_f {
 	# echo footer
 	echo '[+] Please see README'
 	sleep 0.5
-	echo '[!] Warning: You have two choises, start manually or another way.'
-	sleep 0.5
 	echo '[!] Warning: You should run program as root.'
 	sleep 0.5
-	echo '[+] You can run program from /opt/M.SER_v1.0/M.SER.sh'
+	echo '[+] You can view source code from /opt/M.SER_v1.0/M.SER.sh'
 	echo '[+] Done'
 }
 

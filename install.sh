@@ -101,7 +101,7 @@ function install_f {
 		echo -en '[+] Enter interface: ' ; read interface
 		echo -en "[+] Your server interface is $interface. Are you sure ? [y/n]: " ; read question
 		if [ "$question" = "y" ] ; then
-			up 13 "interface=$interface" M.SER.sh > M.SAL_new.sh
+			up 12 "interface=$interface" M.SER.sh > M.SAL_new.sh
 			mv M.SAL_new.sh M.SER.sh
 			echo '[+] M.SER.sh Updated'
 			echo '[+]'
@@ -117,7 +117,7 @@ function install_f {
 		echo -en "[+] Enter Port: " ; read port
 		echo -en "[+] SSH Port is $port. Are you sure ? [y/n]: " ; read question
 		if [ "$question" = "y" ] ; then
-			up 14 "listen=$port" M.SER.sh > M.SAL_new.sh
+			up 13 "listen=$port" M.SER.sh > M.SAL_new.sh
 			mv M.SAL_new.sh M.SER.sh
 			echo '[+] M.SER.sh Updated'
 			echo '[+]'
@@ -134,7 +134,7 @@ function install_f {
 		echo -en "[+] Enter address: " ; read root
 		echo -en "[+] / partition is $root. Are you sure ? [y/n]: " ; read question
 		if [ "$question" = "y" ] ; then
-			up 15 "root="$root"" M.SER.sh > M.SAL_new.sh
+			up 14 "root="$root"" M.SER.sh > M.SAL_new.sh
 			mv M.SAL_new.sh M.SER.sh
 			echo '[+] M.SER.sh Updated'
 			echo '[+]'

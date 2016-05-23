@@ -214,6 +214,27 @@ function install_f {
 	else
 		echo '[+]'
 	fi
+	
+	# M.CSS Program
+	echo -en '[+] Do you have installed M.CSS ? [y/n]: ' ; read question
+	if [ "$question" = "y" ] ; then
+		for (( ;; )) ; do
+			echo '[+] Enter M.CSS address. For example, htp://example.com/M.CSS/'
+			echo -en '[+] Enter M.CSS address: ' ; read address
+			echo -en "[+] M.CSS address is $address. Are you sure ? [y/n]: " ; read question
+			if [ "$question" = "y" ] ; then
+				up 36 "<li><a href="$address">M.CSS</a></li>" $www/index.html > $www/index.html.new
+				mv $www/index.html.new $www/index.html
+				echo "[+] $www/index.html Updated"
+				echo '[+]'
+				break
+			else
+				echo '[+]'
+			fi
+		done
+	else
+		echo '[+]'
+	fi
 
 	# Copy M.SER.sh
 	[ ! -f /opt/M.SER_v1.0/M.SER.sh ] && cp M.SER.sh /opt/M.SER_v1.0/ && chmod 755 /opt/M.SER_v1.0/M.SER.sh && echo '[+] M.SER.sh copied' || echo '[-] Error: /opt/M.SER_v1.0/M.SER.sh exist'

@@ -31,7 +31,7 @@ function uninstall_f {
 # check dependencies in system
 function check_f {
 	echo '[+] check dependencies in system:  '
-	for program in whoami sleep cat head tail cut awk date grep mv cp rm iostat uptime
+	for program in whoami sleep cat head tail cut awk date grep mv cp rm iostat uptime free
 	do
 		if [ ! -z `which $program 2> /dev/null` ] ; then
 			echo "[+] $program found"

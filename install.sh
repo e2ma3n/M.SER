@@ -95,13 +95,6 @@ function install_f {
 		fi
 	done
 
-	# Delay
-	echo -en '[+] Delay between each check [by Second]: ' ; read delay
-	up 12 "delay=$delay" M.SER.sh > M.SAL_new.sh
-	mv M.SAL_new.sh M.SER.sh
-	echo '[+] M.SER.sh Updated'
-	echo '[+]'
-
 	# Main Interface
 	for (( ;; )) ; do
 		echo '[+] Enter main server interface. for example, eth0'
@@ -246,12 +239,8 @@ function install_f {
 	[ ! -f /opt/M.SER_v1.0/M.SER.sh ] && cp M.SER.sh /opt/M.SER_v1.0/ && chmod 755 /opt/M.SER_v1.0/M.SER.sh && echo '[+] M.SER.sh copied' || echo '[-] Error: /opt/M.SER_v1.0/M.SER.sh exist'
 	sleep 1
 	
-	# Create startup.sh
-	[ ! -f /opt/M.SER_v1.0/startup.sh ] && echo '#! /bin/bash' > /opt/M.SER_v1.0/startup.sh && echo '/opt/M.SER_v1.0/M.SER.sh' >> /opt/M.SER_v1.0/startup.sh && chmod +x /opt/M.SER_v1.0/startup.sh && echo '[+] startup.sh created' || echo '[-] Error: /opt/M.SER_v1.0/startup.sh exist'
-	sleep 1
-	
-	# Add startup.sh to crontab file
-	[ -f /etc/crontab ] && echo '@reboot root /opt/M.SER_v1.0/startup.sh' >> /etc/crontab && echo '[+] startup.sh added to crontab file' || echo -e "[-] Error: /etc/crontab not found\n[-] You can start program manually or starting up script as a daemon using another way."
+	# Add M.SER.sh to crontab file
+	[ -f /etc/crontab ] && echo '*/1 *   * * *   root    /opt/M.SER_v1.0/M.SER.sh' >> /etc/crontab && echo '[+] M.SER.sh added to crontab file' || echo -e "[-] Error: /etc/crontab not found\n[-] You can start program manually or starting up script as a daemon using another way."
 	sleep 1
 	
 	# Copy README

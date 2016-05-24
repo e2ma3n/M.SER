@@ -31,7 +31,7 @@ function uninstall_f {
 # check dependencies in system
 function check_f {
 	echo '[+] check dependencies in system:  '
-	for program in whoami sed cat head tail cut awk date grep mv cp rm iostat uptime free ifconfig netstat users wc rev
+	for program in whoami sed cat head tail cut awk date grep mv cp rm iostat uptime free ifconfig users wc rev
 	do
 		if [ ! -z `which $program 2> /dev/null` ] ; then
 			echo "[+] $program found"
@@ -110,23 +110,7 @@ function install_f {
 			echo '[+]'
 		fi
 	done
-
-	# SSH Port
-	for (( ;; )) ; do
-		echo "[+] Enter SSH Port. default is 22"
-		echo -en "[+] Enter Port: " ; read port
-		echo -en "[+] SSH Port is $port. Are you sure ? [y/n]: " ; read question
-		if [ "$question" = "y" ] ; then
-			up 13 "listen=$port" M.SER.sh > M.SAL_new.sh
-			mv M.SAL_new.sh M.SER.sh
-			echo '[+] M.SER.sh Updated'
-			echo '[+]'
-			break
-		else
-			echo '[+]'
-		fi
-	done
-
+	
 	# Create css directory in web server
 	[ ! -d $www/css ] && mkdir -p $www/css && echo "[+] css Directory created in $www" || echo "[-] Error: $www/css exist"
 	sleep 1

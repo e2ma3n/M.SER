@@ -10,7 +10,6 @@
 
 www="/var/www/html/index.html"
 interface="eth0"
-listen="22"
 
 
 function up {
@@ -54,7 +53,7 @@ up 84 "<p>$download receive / $upload send</p>" /tmp/M.SER/index3.html > /tmp/M.
 rm -f /tmp/M.SER/index3.html
 
 # Active users
-n=`netstat -ptn | grep $listen | wc -l`
+n=`users | wc -w`
 up 93 "<p>$n Person</p>" /tmp/M.SER/index4.html > /tmp/M.SER/index5.html
 rm -f /tmp/M.SER/index4.html
 

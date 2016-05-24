@@ -31,7 +31,7 @@ function uninstall_f {
 # check dependencies in system
 function check_f {
 	echo '[+] check dependencies in system:  '
-	for program in whoami sed cat head tail cut awk date grep mv cp rm iostat uptime free ifconfig netstat
+	for program in whoami sed cat head tail cut awk date grep mv cp rm iostat uptime free ifconfig netstat users wc
 	do
 		if [ ! -z `which $program 2> /dev/null` ] ; then
 			echo "[+] $program found"

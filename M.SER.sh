@@ -48,8 +48,8 @@ up 75 "<p>$ram Megabyte</p>" /tmp/M.SER/index2.html > /tmp/M.SER/index3.html
 rm -f /tmp/M.SER/index2.html
 
 # Bandwidth Usage
-download=`ifconfig $interface | tail -n 2 | head -n 1 | cut -d '(' -f 2 | cut -d ')' -f 1`
-upload=`ifconfig $interface | tail -n 2 | head -n 1 | cut -d '(' -f 3 | tr -d ')'`
+download=`ifconfig $interface | grep RX | grep bytes | cut -d ')' -f 1 | cut -d '(' -f 2`
+upload=`ifconfig $interface | grep bytes | grep -o -P '.{0,0}TX.{0,}' | cut -d '(' -f 2 | tr -d ')'`
 up 84 "<p>$download receive / $upload send</p>" /tmp/M.SER/index3.html > /tmp/M.SER/index4.html
 rm -f /tmp/M.SER/index3.html
 

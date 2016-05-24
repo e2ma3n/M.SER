@@ -28,6 +28,9 @@ iostat
 free
 ifconfig
 netstat
+users
+wc
+rev
 
 
 Check dependencies :

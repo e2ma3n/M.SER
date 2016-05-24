@@ -27,7 +27,6 @@ rm
 iostat
 free
 ifconfig
-netstat
 users
 wc
 rev

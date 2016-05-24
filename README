@@ -49,8 +49,7 @@ sudo ./install.sh -i
 
 
 Usage :
-sudo /opt/M.SER_v1.0/M.SER.sh
-open http://example.com/
+After install, just open http://example.com/
 
 
 Uninstall :
@@ -72,3 +71,4 @@ Debian 7.8.0 netinstall - 64 Bit
 
 Notes :
 You should run program as root.
+SELinux maybe prevention index.html for changes.

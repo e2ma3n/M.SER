@@ -26,6 +26,8 @@ cp
 rm
 iostat
 free
+ifconfig
+netstat
 
 
 Check dependencies :

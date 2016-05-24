@@ -61,11 +61,11 @@ function install_f {
 	sleep 1.5
 	echo '[+] Tested on all popular linux distributions such as debian 7, debian 8, ubuntu server, CentOS 6 and CentOS 7'
 	sleep 1.5
-	echo '[+] Suggestions: Install M.CSS for monitoring and control system services (restart and stop 12 popular services such as apache and ...)'
+	echo '[+] Suggestion: Install M.CSS for monitoring and control system services (restart and stop 12 popular services such as apache and ...)'
 	sleep 2.5
-	echo '[+] Suggestions: Install M.SAL for monitoring system authentication logs (such as ssh attack, ssh login and ...)'
+	echo '[+] Suggestion: Install M.SAL for monitoring system authentication logs (such as ssh attack, ssh login and ...)'
 	sleep 2.5
-	echo '[+] Suggestions: Install M.SQL for monitoring squid logs (all logs)'
+	echo '[+] Suggestion: Install M.SQL for monitoring squid logs (all logs)'
 	sleep 2.5
 	echo -en '[+] Press enter for continue or press ctrl+c for exit' ; read
 	sleep 4
